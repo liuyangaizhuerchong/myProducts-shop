@@ -1,18 +1,18 @@
-import request from '@/utils/request'
+import request, { post } from '@/utils/request'
 
 export function login(data) {
-  return request({
-    url: '/vue-admin-template/user/login',
+  /* return request({
+    url: '/api/v1/auth/manager_login',
     method: 'post',
     data
-  })
+  }) */
+  return post('/api/v1/auth/manager_login', data)
 }
 
-export function getInfo(token) {
+export function getInfo() {
   return request({
-    url: '/vue-admin-template/user/info',
-    method: 'get',
-    params: { token }
+    url: '/api/v1/auth/manager_info',
+    method: 'get'
   })
 }
 
