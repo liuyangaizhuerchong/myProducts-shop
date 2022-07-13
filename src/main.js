@@ -15,6 +15,8 @@ import router from './router'
 import '@/icons' // icon
 import '@/permission' // permission control
 
+import moment from 'moment'
+
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
@@ -35,9 +37,19 @@ Vue.use(ElementUI, { locale })
 
 Vue.config.productionTip = false
 
+Vue.filter('dalImg', (url) => {
+  if (url) {
+    if (url.startsWith('http')) {
+      return url
+    }
+    return process.env.VUE_APP_BASE_API + url
+  }
+  return require('@/components/img/1.png')
+})
+Vue.filter('formatDate', (date) => moment(date).format('YYYY-MM-DD hh:mm:ss'))
 new Vue({
   el: '#app',
   router,
   store,
-  render: h => h(App)
+  render: (h) => h(App)
 })

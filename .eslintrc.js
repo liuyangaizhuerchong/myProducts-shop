@@ -14,10 +14,9 @@ module.exports = {
   // add your custom rules here
   //it is base on https://github.com/vuejs/eslint-config-vue
   rules: {
-    'vue/max-attributes-per-line': [
-      2,
-      { singleline: 10, multiline: { max: 1, allowFirstLine: false } }
-    ],
+    'vue/attributes-order': 0,
+    'vue/max-attributes-per-line': 0,
+    'vue/html-self-closing': 0,
     'vue/html-closing-bracket-newline': 0,
     'vue/html-indent': 0,
     'vue/singleline-html-element-content-newline': 'off',
@@ -237,7 +236,7 @@ module.exports = {
       }
     ],
     'spaced-comment': [
-      2,
+      0,
       'always',
       {
         markers: [
@@ -260,7 +259,7 @@ module.exports = {
     'prefer-const': 2,
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'object-curly-spacing': [
-      2,
+      0,
       'always',
       {
         objectsInObjects: false

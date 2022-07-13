@@ -72,6 +72,36 @@ export const constantRoutes = [
         name: 'Category',
         component: () => import('@/views/products/category.vue'),
         meta: { title: '商品分类' }
+      },
+      {
+        path: 'newcategory',
+        name: 'NewCategory',
+        component: () => import('@/views/products/NewCategory.vue')
+      },
+      {
+        path: 'editcategory',
+        name: 'EditCategory',
+        component: () => import('@/views/products/EditCategory.vue')
+      },
+      {
+        path: 'detailcategory',
+        name: 'DetailCategory',
+        component: () => import('@/views/products/DetailCategory.vue')
+      },
+      {
+        path: 'add',
+        name: 'Add',
+        component: () => import('@/views/products/Add')
+      },
+      {
+        path: 'detail',
+        name: 'Detail',
+        component: () => import('@/views/products/Detail')
+      },
+      {
+        path: 'edit',
+        name: 'Edit',
+        component: () => import('@/views/products/Edit')
       }
     ]
   },

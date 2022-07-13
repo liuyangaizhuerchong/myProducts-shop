@@ -1,4 +1,4 @@
-import { login, logout, getInfo } from '@/api/user'
+import { login, getInfo } from '@/api/user'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import { resetRouter } from '@/router'
 
@@ -56,7 +56,7 @@ const actions = {
     return new Promise((resolve, reject) => {
       getInfo()
         .then((response) => {
-          console.log(response)
+          // console.log(response)
           const data = response
           if (!data) {
             return reject('Verification failed, please Login again.')
@@ -73,18 +73,12 @@ const actions = {
   },
 
   // user logout
-  logout({ commit, state }) {
+  logout({ commit }) {
     return new Promise((resolve, reject) => {
-      logout(state.token)
-        .then(() => {
-          removeToken() // must remove  token  first
-          resetRouter()
-          commit('RESET_STATE')
-          resolve()
-        })
-        .catch((error) => {
-          reject(error)
-        })
+      removeToken() // must remove  token  first
+      resetRouter()
+      commit('RESET_STATE')
+      resolve()
     })
   },
 
